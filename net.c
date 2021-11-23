@@ -11,6 +11,7 @@
 
 #include "puzzles.h"
 #include "tree234.h"
+#include "dark.h"
 
 /*
  * The standard user interface for Net simply has left- and
@@ -2495,37 +2496,37 @@ static float *game_colours(frontend *fe, int *ncolours)
     /*
      * Wires are black.
      */
-    ret[COL_WIRE * 3 + 0] = 0.0F;
-    ret[COL_WIRE * 3 + 1] = 0.0F;
-    ret[COL_WIRE * 3 + 2] = 0.0F;
+    ret[COL_WIRE * 3 + 0] = DF_BLACK_0;
+    ret[COL_WIRE * 3 + 1] = DF_BLACK_1;
+    ret[COL_WIRE * 3 + 2] = DF_BLACK_2;
 
     /*
      * Powered wires and powered endpoints are cyan.
      */
-    ret[COL_POWERED * 3 + 0] = 0.0F;
-    ret[COL_POWERED * 3 + 1] = 1.0F;
-    ret[COL_POWERED * 3 + 2] = 1.0F;
+    ret[COL_POWERED * 3 + 0] = DF_GREEN_0;
+    ret[COL_POWERED * 3 + 1] = DF_GREEN_1;
+    ret[COL_POWERED * 3 + 2] = DF_GREEN_2;
 
     /*
      * Barriers are red.
      */
-    ret[COL_BARRIER * 3 + 0] = 1.0F;
-    ret[COL_BARRIER * 3 + 1] = 0.0F;
-    ret[COL_BARRIER * 3 + 2] = 0.0F;
+    ret[COL_BARRIER * 3 + 0] = DF_RED_0;
+    ret[COL_BARRIER * 3 + 1] = DF_RED_1;
+    ret[COL_BARRIER * 3 + 2] = DF_RED_2;
 
     /*
      * Highlighted errors are red as well.
      */
-    ret[COL_ERR * 3 + 0] = 1.0F;
-    ret[COL_ERR * 3 + 1] = 0.0F;
-    ret[COL_ERR * 3 + 2] = 0.0F;
+    ret[COL_ERR * 3 + 0] = DF_RED_0;
+    ret[COL_ERR * 3 + 1] = DF_RED_1;
+    ret[COL_ERR * 3 + 2] = DF_RED_2;
 
     /*
      * Unpowered endpoints are blue.
      */
-    ret[COL_ENDPOINT * 3 + 0] = 0.0F;
-    ret[COL_ENDPOINT * 3 + 1] = 0.0F;
-    ret[COL_ENDPOINT * 3 + 2] = 1.0F;
+    ret[COL_ENDPOINT * 3 + 0] = DF_BLUE_0;
+    ret[COL_ENDPOINT * 3 + 1] = DF_BLUE_1;
+    ret[COL_ENDPOINT * 3 + 2] = DF_BLUE_2;
 
     /*
      * Tile borders are a darker grey than the background.
