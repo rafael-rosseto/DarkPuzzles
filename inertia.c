@@ -14,6 +14,7 @@
 #include <math.h>
 
 #include "puzzles.h"
+#include "dark.h"
 
 /* Used in the game_state */
 #define BLANK   'b'
@@ -1779,25 +1780,25 @@ static float *game_colours(frontend *fe, int *ncolours)
 
     game_mkhighlight(fe, ret, COL_BACKGROUND, COL_HIGHLIGHT, COL_LOWLIGHT);
 
-    ret[COL_OUTLINE * 3 + 0] = 0.0F;
-    ret[COL_OUTLINE * 3 + 1] = 0.0F;
-    ret[COL_OUTLINE * 3 + 2] = 0.0F;
+    ret[COL_OUTLINE * 3 + 0] = DF_BLACK_0;
+    ret[COL_OUTLINE * 3 + 1] = DF_BLACK_1;
+    ret[COL_OUTLINE * 3 + 2] = DF_BLACK_2;
 
-    ret[COL_PLAYER * 3 + 0] = 0.0F;
-    ret[COL_PLAYER * 3 + 1] = 1.0F;
-    ret[COL_PLAYER * 3 + 2] = 0.0F;
+    ret[COL_PLAYER * 3 + 0] = DF_GREEN_0;
+    ret[COL_PLAYER * 3 + 1] = DF_GREEN_1;
+    ret[COL_PLAYER * 3 + 2] = DF_GREEN_2;
 
-    ret[COL_DEAD_PLAYER * 3 + 0] = 1.0F;
-    ret[COL_DEAD_PLAYER * 3 + 1] = 0.0F;
-    ret[COL_DEAD_PLAYER * 3 + 2] = 0.0F;
+    ret[COL_DEAD_PLAYER * 3 + 0] = DF_RED_0;
+    ret[COL_DEAD_PLAYER * 3 + 1] = DF_RED_1;
+    ret[COL_DEAD_PLAYER * 3 + 2] = DF_RED_2;
 
-    ret[COL_MINE * 3 + 0] = 0.0F;
-    ret[COL_MINE * 3 + 1] = 0.0F;
-    ret[COL_MINE * 3 + 2] = 0.0F;
+    ret[COL_MINE * 3 + 0] = DF_BLACK_0;
+    ret[COL_MINE * 3 + 1] = DF_BLACK_1;
+    ret[COL_MINE * 3 + 2] = DF_BLACK_2;
 
-    ret[COL_GEM * 3 + 0] = 0.6F;
-    ret[COL_GEM * 3 + 1] = 1.0F;
-    ret[COL_GEM * 3 + 2] = 1.0F;
+    ret[COL_GEM * 3 + 0] = DF_BLUE_0;
+    ret[COL_GEM * 3 + 1] = DF_BLUE_1;
+    ret[COL_GEM * 3 + 2] = DF_BLUE_2;
 
     for (i = 0; i < 3; i++) {
 	ret[COL_WALL * 3 + i] = (3 * ret[COL_BACKGROUND * 3 + i] +

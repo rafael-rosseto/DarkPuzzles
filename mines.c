@@ -16,6 +16,7 @@
 
 #include "tree234.h"
 #include "puzzles.h"
+#include "dark.h"
 
 enum {
     COL_BACKGROUND, COL_BACKGROUND2,
@@ -2721,65 +2722,65 @@ static float *game_colours(frontend *fe, int *ncolours)
     ret[COL_BACKGROUND2 * 3 + 1] = ret[COL_BACKGROUND * 3 + 1] * 19.0F / 20.0F;
     ret[COL_BACKGROUND2 * 3 + 2] = ret[COL_BACKGROUND * 3 + 2] * 19.0F / 20.0F;
 
-    ret[COL_1 * 3 + 0] = 0.0F;
-    ret[COL_1 * 3 + 1] = 0.0F;
-    ret[COL_1 * 3 + 2] = 1.0F;
+    ret[COL_1 * 3 + 0] = DF_BLUE_0;
+    ret[COL_1 * 3 + 1] = DF_BLUE_1;
+    ret[COL_1 * 3 + 2] = DF_BLUE_2;
 
-    ret[COL_2 * 3 + 0] = 0.0F;
-    ret[COL_2 * 3 + 1] = 0.5F;
-    ret[COL_2 * 3 + 2] = 0.0F;
+    ret[COL_2 * 3 + 0] = DF_GREEN_0;
+    ret[COL_2 * 3 + 1] = DF_GREEN_1;
+    ret[COL_2 * 3 + 2] = DF_GREEN_2;
 
-    ret[COL_3 * 3 + 0] = 1.0F;
-    ret[COL_3 * 3 + 1] = 0.0F;
-    ret[COL_3 * 3 + 2] = 0.0F;
+    ret[COL_3 * 3 + 0] = DF_ORANGE_0;
+    ret[COL_3 * 3 + 1] = DF_ORANGE_1;
+    ret[COL_3 * 3 + 2] = DF_ORANGE_2;
 
-    ret[COL_4 * 3 + 0] = 0.0F;
-    ret[COL_4 * 3 + 1] = 0.0F;
-    ret[COL_4 * 3 + 2] = 0.5F;
+    ret[COL_4 * 3 + 0] = DF_PURPLE_0;
+    ret[COL_4 * 3 + 1] = DF_PURPLE_1;
+    ret[COL_4 * 3 + 2] = DF_PURPLE_2;
 
-    ret[COL_5 * 3 + 0] = 0.5F;
-    ret[COL_5 * 3 + 1] = 0.0F;
-    ret[COL_5 * 3 + 2] = 0.0F;
+    ret[COL_5 * 3 + 0] = DF_LILAC_0;
+    ret[COL_5 * 3 + 1] = DF_LILAC_1;
+    ret[COL_5 * 3 + 2] = DF_LILAC_2;
 
-    ret[COL_6 * 3 + 0] = 0.0F;
-    ret[COL_6 * 3 + 1] = 0.5F;
-    ret[COL_6 * 3 + 2] = 0.5F;
+    ret[COL_6 * 3 + 0] = DF_TURQUOISE_0;
+    ret[COL_6 * 3 + 1] = DF_TURQUOISE_1;
+    ret[COL_6 * 3 + 2] = DF_TURQUOISE_2;
 
-    ret[COL_7 * 3 + 0] = 0.0F;
-    ret[COL_7 * 3 + 1] = 0.0F;
-    ret[COL_7 * 3 + 2] = 0.0F;
+    ret[COL_7 * 3 + 0] = DF_PINK_0;
+    ret[COL_7 * 3 + 1] = DF_PINK_1;
+    ret[COL_7 * 3 + 2] = DF_PINK_2;
 
-    ret[COL_8 * 3 + 0] = 0.5F;
-    ret[COL_8 * 3 + 1] = 0.5F;
-    ret[COL_8 * 3 + 2] = 0.5F;
+    ret[COL_8 * 3 + 0] = DF_WHITE_0;
+    ret[COL_8 * 3 + 1] = DF_WHITE_1;
+    ret[COL_8 * 3 + 2] = DF_WHITE_2;
 
-    ret[COL_MINE * 3 + 0] = 0.0F;
-    ret[COL_MINE * 3 + 1] = 0.0F;
-    ret[COL_MINE * 3 + 2] = 0.0F;
+    ret[COL_MINE * 3 + 0] = DF_BLACK_0;
+    ret[COL_MINE * 3 + 1] = DF_BLACK_1;
+    ret[COL_MINE * 3 + 2] = DF_BLACK_2;
 
-    ret[COL_BANG * 3 + 0] = 1.0F;
-    ret[COL_BANG * 3 + 1] = 0.0F;
-    ret[COL_BANG * 3 + 2] = 0.0F;
+    ret[COL_BANG * 3 + 0] = DF_RED_0;
+    ret[COL_BANG * 3 + 1] = DF_RED_1;
+    ret[COL_BANG * 3 + 2] = DF_RED_2;
 
-    ret[COL_CROSS * 3 + 0] = 1.0F;
-    ret[COL_CROSS * 3 + 1] = 0.0F;
-    ret[COL_CROSS * 3 + 2] = 0.0F;
+    ret[COL_CROSS * 3 + 0] = DF_RED_0;
+    ret[COL_CROSS * 3 + 1] = DF_RED_1;
+    ret[COL_CROSS * 3 + 2] = DF_RED_2;
 
-    ret[COL_FLAG * 3 + 0] = 1.0F;
-    ret[COL_FLAG * 3 + 1] = 0.0F;
-    ret[COL_FLAG * 3 + 2] = 0.0F;
+    ret[COL_FLAG * 3 + 0] = DF_RED_0;
+    ret[COL_FLAG * 3 + 1] = DF_RED_1;
+    ret[COL_FLAG * 3 + 2] = DF_RED_2;
 
-    ret[COL_FLAGBASE * 3 + 0] = 0.0F;
-    ret[COL_FLAGBASE * 3 + 1] = 0.0F;
-    ret[COL_FLAGBASE * 3 + 2] = 0.0F;
+    ret[COL_FLAGBASE * 3 + 0] = DF_BLACK_0;
+    ret[COL_FLAGBASE * 3 + 1] = DF_BLACK_1;
+    ret[COL_FLAGBASE * 3 + 2] = DF_BLACK_2;
 
-    ret[COL_QUERY * 3 + 0] = 0.0F;
-    ret[COL_QUERY * 3 + 1] = 0.0F;
-    ret[COL_QUERY * 3 + 2] = 0.0F;
+    ret[COL_QUERY * 3 + 0] = DF_WHITE_0;
+    ret[COL_QUERY * 3 + 1] = DF_WHITE_1;
+    ret[COL_QUERY * 3 + 2] = DF_WHITE_2;
 
-    ret[COL_HIGHLIGHT * 3 + 0] = 1.0F;
-    ret[COL_HIGHLIGHT * 3 + 1] = 1.0F;
-    ret[COL_HIGHLIGHT * 3 + 2] = 1.0F;
+    ret[COL_HIGHLIGHT * 3 + 0] = ret[COL_BACKGROUND * 3 + 2] * 4.0F / 3.0F;
+    ret[COL_HIGHLIGHT * 3 + 1] = ret[COL_BACKGROUND * 3 + 2] * 4.0F / 3.0F;
+    ret[COL_HIGHLIGHT * 3 + 2] = ret[COL_BACKGROUND * 3 + 2] * 4.0F / 3.0F;
 
     ret[COL_LOWLIGHT * 3 + 0] = ret[COL_BACKGROUND * 3 + 0] * 2.0F / 3.0F;
     ret[COL_LOWLIGHT * 3 + 1] = ret[COL_BACKGROUND * 3 + 1] * 2.0F / 3.0F;

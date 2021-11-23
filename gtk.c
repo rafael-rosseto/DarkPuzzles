@@ -311,7 +311,9 @@ void frontend_default_colour(frontend *fe, float *output)
      * This is also what we do on GTK 2 in headless mode, where we
      * don't have a widget style to query.
      */
-    output[0] = output[1] = output[2] = 0.9F;
+    output[0] = 0.19F;
+    output[1] = 0.21F;
+    output[2] = 0.23F;
 }
 
 void gtk_status_bar(void *handle, const char *text)
